@@ -1,0 +1,503 @@
+**
+*
+32 1
+
+RESI DAPI       0.000  ! D-apiose
+!                        param penalty=  65.000 ; charge penalty=  37.656
+GROUP            ! CHARGE   CH_PENALTY
+ATOM O4     OG3C51 -0.364 !   27.335           
+ATOM O3     OG311  -0.631 !   27.546
+ATOM HO3    HGP1    0.420 !    2.057
+ATOM O2     OG311  -0.650 !    2.577
+ATOM HO2    HGP1    0.420 !    0.040           H41  H42 
+ATOM O1     OG311  -0.656 !   17.630    HO3'     \ /
+ATOM HO1    HGP1    0.420 !    2.400    |         C4---O4    O1--HO1
+ATOM O3'    OG311  -0.653 !   12.573    O3'      /      \   /
+ATOM HO3'   HGP1    0.420 !    0.040     \      /        \ /
+ATOM C3     CG3C50  0.175 !   34.693      C3'--C3        C1--H1
+ATOM C2     CG3C51  0.141 !   13.192          /  \       /
+ATOM H2     HGA1    0.090 !    0.694         O3   \     /
+ATOM C4     CG3C52  0.011 !   23.495        /      -C2-'     
+ATOM H41    HGA2    0.090 !    0.694      HO3      /  \      
+ATOM H42    HGA2    0.090 !    0.694              H2   O2-HO2
+ATOM C1     CG3C51  0.364 !   24.178
+ATOM H1     HGA1    0.090 !    0.040
+ATOM C3'    CG321   0.043 !   22.042
+ATOM H31    HGA2    0.090 !    1.963
+ATOM H32    HGA2    0.090 !    1.963
+
+BOND C1   O1     O1   HO1     C1   O4      C1   H1  
+BOND C1   C2     C2   H2      C2   O2      O2   HO2 
+BOND C2   C3     C3   C3'     C3   C4      C3   O3  
+BOND O3   HO3    C4   O4      C4   H41     C4   H42 
+BOND C3'  H31    C3'  H32     C3'  O3'     O3'  HO3'
+
+RESI ACER        -1.00  !  Aceric Acid
+GROUP
+ATOM O4   OG3C51 -0.40  !
+ATOM C1   CG3C51  0.34  !
+ATOM H1   HGA1    0.09  !                H53
+ATOM O1   OG311  -0.65  !                 \       O4
+ATOM HO1  HGP1    0.42  !             H51--C5   /    \    H1
+ATOM C4   CG3C51  0.11  !                 / \  /      \  /
+ATOM H4   HGA1    0.09  !              H52   C4        C1
+GROUP                   !                   / \        / \
+ATOM C5   CG331  -0.27  !                 H4   \      /   O1--HO1
+ATOM H51  HGA3    0.09  !    O31==C31----------C3----C2
+ATOM H52  HGA3    0.09  !         /           /      / \
+ATOM H53  HGA3    0.09  !      O32     HO3--O3      H2 O2
+                        !                               |
+GROUP                   !                              HO2
+ATOM C2   CG3C51  0.14  !
+ATOM H2   HGA1    0.09  !
+ATOM O2   OG311  -0.65  !
+ATOM HO2  HGP1    0.42  !
+GROUP                   !
+ATOM C3   CG3C50  0.23  !
+ATOM O3   OG311  -0.65  !
+ATOM HO3  HGP1    0.42  !
+GROUP
+ATOM C31  CG2O3   0.52
+ATOM O31  OG2D2  -0.76  !
+ATOM O32  OG2D2  -0.76
+BOND O4 C1  C1 H1   C1 O1   O1 HO1
+BOND C1 C2  C2 H2   C2 O2   O2 HO2
+BOND C2 C3  C3 O3   O3 HO3
+BOND C3 C4  C4 H4   C4 C5   C4 O4
+BOND C5 H51 C5 H52  C5 H53
+BOND C3 C31 C31 O31 C31 O32
+IMPR C31    O31    O32    C3    
+
+RESI arbp           0.000  ! 4C1 alpha-L-arabinopyranose
+                           !
+GROU                       !
+ATOM C1   CC3162    0.340  !
+ATOM H1   HCA1      0.090  !
+ATOM O1   OC311    -0.650  !
+ATOM HO1  HCP1      0.420  !                  H52
+ATOM C5   CC3263    0.060  !                  |
+ATOM H5   HCA2      0.070  !               H5-C5---O5
+ATOM H52  HCA2      0.070  !        HO4-O4   /       \    H1
+ATOM O5   OC3C61   -0.400  !              \ / HO3     \  /
+GROU                       !               C4 |        C1
+ATOM C2   CC3161    0.140  !              / \ O3   H2 /  \
+ATOM H2   HCA1      0.090  !            H4   \|    | /    O1-HO1
+ATOM O2   OC311    -0.650  !                  C3---C2
+ATOM HO2  HCP1      0.420  !                  |    |
+GROU                       !                  H3   O2-HO2
+ATOM C3   CC3161    0.140  !
+ATOM H3   HCA1      0.090  !
+ATOM O3   OC311    -0.650  !
+ATOM HO3  HCP1      0.420  !
+GROU
+ATOM C4   CC3161    0.140
+ATOM H4   HCA1      0.090
+ATOM O4   OC311    -0.650
+ATOM HO4  HCP1      0.420
+!
+BOND C1   O1        C1   H1        O1   HO1       C1   O5        C1   C2
+BOND C2   H2        C2   O2        O2   HO2       C2   C3        C3   H3
+BOND C3   O3        O3   HO3       C3   C4        C4   H4        C4   O4
+BOND O4   HO4       C4   C5        C5   H5        C5   H52
+BOND C5   O5
+!    I    J    K    L      R(IK)   T(IKJ)    PHI   T(JKL)   R(KL)
+IC   O1   C2  *C1   H1     1.4077  108.33 -123.34  103.67   1.1200
+IC   O1   O5  *C1   C2     1.4077  108.39 -119.83  112.62   1.5516
+IC   O2   C3  *C2   H2     1.4293  114.98 -108.39  100.80   1.0662
+IC   O2   C1  *C2   C3     1.4293  117.26 -138.07  113.63   1.4880
+IC   O3   C4  *C3   H3     1.4122  110.86  120.36  107.49   1.1219
+IC   O3   C2  *C3   C4     1.4122  109.00  121.20  109.13   1.5315
+IC   O4   C5  *C4   H4     1.4206  109.25 -124.20  109.65   1.1311
+IC   O4   C3  *C4   C5     1.4206  103.58 -118.81  114.40   1.5087
+IC   H52  O5  *C5   H5     1.4718  112.19  113.05  108.36   1.1212
+IC   H52  C4  *C5   O5     1.4718  112.04  128.71  113.93   1.4175
+IC   O5   C1   C2   C3     1.4351  112.62   51.83  113.63   1.4880
+IC   C1   C2   C3   C4     1.5516  113.63  -48.48  109.13   1.5315
+IC   C2   C3   C4   C5     1.4880  109.13   47.85  114.40   1.5087
+IC   C3   C4   C5   O5     1.5315  114.40  -49.84  113.93   1.4175
+IC   C4   C5   O5   C1     1.5087  113.93   51.43  114.13   1.4351
+IC   C5   O5   C1   C2     1.4175  114.13  -51.82  112.62   1.5516
+IC   O5   C1   O1  HO1     1.4351  108.39   47.62  101.41   0.9789
+IC   C1   C2   O2  HO2     1.5516  117.26  -50.05  114.32   0.9181
+IC   C2   C3   O3  HO3     1.4880  109.00  -28.48  103.99   0.9971
+IC   C3   C4   O4  HO4     1.5315  103.58   55.55  110.36   0.9685
+PATC FIRS NONE LAST NONE
+
+RESI DKDO          0.000 ! param penalty=  46.200 ; charge penalty=  39.924
+GROUP            ! CHARGE   CH_PENALTY
+ATOM C1     CG2O2   0.859 !   32.976  !
+ATOM O1A    OG2D1  -0.560 !    8.247  !
+ATOM O1B    OG311  -0.632 !    8.360  !
+ATOM H1B    HGP1    0.429 !    0.787  !
+ATOM C2     CG301   0.270 !   39.924  !
+ATOM O2     OG311  -0.653 !   19.248  !           HO8
+ATOM HO2    HGP1    0.420 !    0.706  !            |
+ATOM C3     CG321  -0.177 !   12.137  !            O8
+ATOM H31    HGA2    0.090 !    0.833  !            |
+ATOM H32    HGA2    0.090 !    0.833  !       H81--C8--H82
+ATOM C4     CG311   0.146 !    6.160  !            |                 H1B
+ATOM H4     HGA1    0.090 !    0.060  !        H7--C7--O7--HO7      /
+ATOM O4     OG311  -0.651 !    0.456  !              \             O1B
+ATOM HO4    HGP1    0.419 !    0.000  !           H6--C6-----O6    |
+ATOM C5     CG311   0.151 !    4.544  !              /        \    C1==O1A
+ATOM H5     HGA1    0.090 !    0.600  !             /          \  /
+ATOM O5     OG311  -0.660 !    0.701  !    HO5-O5-C5            C2
+ATOM HO5    HGP1    0.419 !    0.000  !             \          /  \
+ATOM C6     CG311   0.094 !    8.758  !              \        /    O2--HO2
+ATOM H6     HGA1    0.090 !    0.492  !     HO4--O4--C4------C3
+ATOM O6     OG3C61 -0.331 !   30.846  !              |      / \
+ATOM C7     CG311   0.147 !    4.543  !              H4    H32 H31
+ATOM H7     HGA1    0.090 !    0.600  !
+ATOM O7     OG311  -0.654 !    0.700  !
+ATOM HO7    HGP1    0.419 !    0.000  !
+ATOM C8     CG321   0.053 !    0.601  !
+ATOM H81    HGA2    0.090 !    0.000  !
+ATOM H82    HGA2    0.090 !    0.000  !
+ATOM O8     OG311  -0.648 !    0.030  !
+ATOM HO8    HGP1    0.420 !    0.000  !
+
+BOND C1   O1A    C1   O1B    C1   C2     O1B   H1B  
+BOND C2   O2     C2   C3     C2   O6      O2   HO2  
+BOND C3   C4     C3   H31    C3   H32 
+BOND C4   O4     C4   C5     C4   H4      O4   HO4 
+BOND C5   O5     C5   C6     C5   H5      O5   HO5  
+BOND C6   O6     C6   C7     C6   H6  
+BOND C7   O7     C7   C8     C7   H7      O7   HO7 
+BOND C8   O8     C8   H81    C8   H82     O8   HO8 
+IMPR C1     C2     O1A     O1B    
+
+RESI DDHA     -2.000 ! param penalty=  46.200 ; charge penalty=  40.000
+GROUP            ! CHARGE   CH_PENALTY
+ATOM C1     CG2O3   0.296 !    5.834  
+ATOM O1A    OG2D2  -0.600 !    0.328  
+ATOM O1B    OG2D2  -0.600 !    0.328  				      
+ATOM C2     CG301   0.101 !   15.696                       O1B  	      
+ATOM O2     OG311  -0.636 !    8.792                      /	      	      
+ATOM HO2    HGP1    0.419 !    0.328                O1A==C1	      
+ATOM C3     CG321  -0.190 !    9.041                     |	      
+ATOM H31    HGA2    0.090 !    0.609                 O6--C2-O2-HO2    	      
+ATOM H32    HGA2    0.090 !    0.609        O7A     /     \	      
+ATOM C4     CG311   0.132 !    6.837          \    /       \ 	      	      
+ATOM H4     HGA1    0.090 !    0.060      O7B==C7-C6-H6    C3-H31     
+ATOM O4     OG311  -0.648 !    0.060              |        | \	      
+ATOM HO4    HGP1    0.419 !    0.000              |        |  H32     	      
+ATOM C5     CG311   0.169 !    5.704           H5-C5-------C4	      
+ATOM H5     HGA1    0.090 !    0.300              |       / \	       
+ATOM O5     OG311  -0.652 !    0.700              O5     O4  H4       
+ATOM HO5    HGP1    0.419 !    0.000              |      |	      
+ATOM C6     CG311  -0.024 !   12.007              HO5    HO4          
+ATOM H6     HGA1    0.090 !    0.090
+ATOM O6     OG3C61 -0.113 !   13.295
+ATOM C7     CG2O3   0.578 !    5.754
+ATOM O7A    OG2D2  -0.760 !    0.325
+ATOM O7B    OG2D2  -0.760 !    0.325
+
+BOND O1B  C1  
+BOND O1A  C1  
+BOND C2   C1  
+BOND O2   C2  
+BOND O2   HO2 
+BOND C3   C2  
+BOND C3   H31 
+BOND C3   H32 
+BOND C4   C3  
+BOND C4   H4  
+BOND O4   HO4 
+BOND O4   C4  
+BOND C4   C5  
+BOND C5   H5  
+BOND O5   C5  
+BOND O5   HO5 
+BOND C5   C6  
+BOND C6   H6  
+BOND O6   C6  
+BOND O6   C2  
+BOND C6   C7  
+BOND O7A  C7  
+BOND O7B  C7  
+IMPR C1     O1B    O1A    C2    
+IMPR C7     O7A    O7B    C6    
+
+RESI DDHH       0.000 ! param penalty=  46.200 ; charge penalty=  40.000
+GROUP            ! CHARGE   CH_PENALTY
+ATOM C1     CG2O2   0.859 !   32.976  
+ATOM O1A    OG2D1  -0.560 !    8.247                       O1B-H1B
+ATOM O1B    OG311  -0.632 !    8.360                      /
+ATOM H1B    HGP1    0.429 !    0.787                O1A==C1
+ATOM C2     CG301   0.270 !   40.000                     |		      
+ATOM O2     OG311  -0.653 !   19.248                 O6--C2-O2-HO2	      
+ATOM HO2    HGP1    0.420 !    0.706    HO7-O7A     /     \	      
+ATOM C3     CG321  -0.177 !   12.137          \    /       \ 	      
+ATOM H31    HGA2    0.090 !    0.833      O7B==C7-C6-H6    C3-H31	      
+ATOM H32    HGA2    0.090 !    0.833              |        | \	      
+ATOM C4     CG311   0.146 !    6.162              |        |  H32	      
+ATOM H4     HGA1    0.090 !    0.060           H5-C5-------C4	      
+ATOM O4     OG311  -0.651 !    0.456              |       / \	      
+ATOM HO4    HGP1    0.419 !    0.000              O5     O4  H4 	      
+ATOM C5     CG311   0.145 !    4.963              |      |	      
+ATOM H5     HGA1    0.090 !    0.613              HO5    HO4           
+ATOM O5     OG311  -0.658 !    1.131
+ATOM HO5    HGP1    0.419 !    0.000
+ATOM C6     CG311   0.089 !   24.727
+ATOM H6     HGA1    0.090 !    0.657
+ATOM O6     OG3C61 -0.339 !   36.780
+ATOM C7     CG2O2   0.793 !   17.840
+ATOM O7A    OG311  -0.630 !   13.420
+ATOM HO7    HGP1    0.429 !    0.262
+ATOM O7B    OG2D1  -0.568 !    4.285
+
+BOND H1B  O1B 
+BOND O1B  C1  
+BOND H31  C3  
+BOND C1   O1A 
+BOND C1   C2  
+BOND HO4  O4  
+BOND H32  C3  
+BOND C3   C2  
+BOND C3   C4  
+BOND O2   C2  
+BOND O2   HO2 
+BOND O4   C4  
+BOND C2   O6  
+BOND C4   H4  
+BOND C4   C5  
+BOND O6   C6  
+BOND HO5  O5  
+BOND C5   O5  
+BOND C5   C6  
+BOND C5   H5  
+BOND H6   C6  
+BOND C6   C7  
+BOND C7   O7B 
+BOND C7   O7A 
+BOND O7A  HO7 
+IMPR C1     C2     O1A    O1B   
+IMPR C7     C6     O7B    O7A   
+
+
+!-------------URON ------------------------------------
+PRES uron         -1.000  !     alpha-L-iduronic acid
+
+delete atom 1h61
+delete atom 1h62
+delete atom 1o6
+delete atom 1ho6
+
+GROU
+ATOM C6   CC2O2     0.520  !
+ATOM O61  OC2D2    -0.760  !
+ATOM O62  OC2D2    -0.760  !
+
+!
+BOND C6   O61
+BOND C6   O62    
+IMPR C6 C5 O62 O61
+!    I    J    K    L      R(IK)   T(IKJ)    PHI   T(JKL)   R(KL)
+IC   O61  C5  *C6  O62     1.4163  111.44  180.00  108.72   1.0943
+IC   C4   C5   C6  O61     1.5171  112.84  120.00  111.44   1.4163
+
+!------------- 13 af pyr-o4-c1-fur ------------------------------------
+! axial-axial 1->3 linkage
+PRES 13af           0.02 ! (i)1->3(i-1) axial at C1 and axial at C3
+dele atom 1HO3
+dele atom 2HO1
+dele atom 2O1
+ATOM 1C3  CC3161    0.09 !
+ATOM 1O3  OC301    -0.36 !
+ATOM 2C1  CC3152    0.29 !
+BOND 1O3  2C1
+
+!--Chain A first patch to gala backbone
+PRES ca1           0.038 ! (i)1->2(i-1) axial at C1 and axial at C2
+dele atom 1HO2
+dele atom 2HO1
+dele atom 2O1
+ATOM 1C2  CC3161    0.10 !
+ATOM 1O2  OC301    -0.36 !
+ATOM 2C1  CG3C51    0.298 !
+BOND 1O2  2C1
+
+!--Chain A second patch to gala backbone apiose - rhamnose
+PRES ca2          -0.08 ! 
+dele atom 1HO3'
+dele atom 2HO1
+dele atom 2O1
+ATOM 1C3' CG321    0.09 !
+ATOM 1O3' OC301    -0.36 !
+ATOM 2C1  CC3162    0.19 !
+BOND 1O3'  2C1
+
+PRES OMX2          -0.09 ! og adding axial O-methyl to C2 on pyranose
+dele atom HO2
+ATOM C2   CC3161    0.10 !
+ATOM O2   OC301    -0.37 !
+ATOM CM   CC331    -0.09 !
+ATOM HM1  HCA3      0.09 !
+ATOM HM2  HCA3      0.09 !
+ATOM HM3  HCA3      0.09 !
+BOND O2 CM
+BOND CM HM1  CM HM2  CM HM3
+!    I    J    K    L      R(IK)   T(IKJ)    PHI   T(JKL)   R(KL)
+IC   c1   C2   O2   CM     1.4477  109.89   66.08  108.74   1.4244
+IC   C2   O2   CM   HM1    1.4355  108.74   59.11  111.44   1.0883
+IC   HM1  O2  *CM   HM2    1.0883  111.44  119.69  113.64   1.0586
+IC   HM3  O2  *CM   HM2    1.1131  110.64 -122.99  113.64   1.0586
+PATC  FIRS NONE LAST NONE
+
+
+PRES GOR3AC         -0.00 ! patch for O-acetyl for ARHM-like residue at C3
+!--- For CGenFF sugar, aceric acid in particular
+!--- From OR2AC top_all36_carb.rtf
+delete ATOM HO3
+                         !
+ATOM C3   Cg3c50    0.17 !          
+ATOM O3   Oc301    -0.47 !          
+ATOM CA3  Cc2O5     0.93 !          
+ATOM OA3  Oc2D1    -0.61 !          
+ATOM CB3  Cc331    -0.29 !          
+ATOM HB1  HcA3      0.09 !          
+ATOM HB2  HcA3      0.09 !          
+ATOM HB3  HcA3      0.09 !          
+!
+BOND O3   CA3       CA3  OA3       CA3  CB3       CB3  HB1       CB3  HB2
+BOND CB3  HB3
+PATC  FIRS NONE LAST NONE
+
+! Third linkage on chain B, rhmanose-O3 to Apiose C1
+! axial-axial 1->3 linkage
+PRES bace           0.02 ! (i)1->3(i-1) axial at C1 and axial at C3
+dele atom 1HO3
+dele atom 2HO1
+dele atom 2O1
+ATOM 1C3  CC3161    0.09 !
+ATOM 1O3  OC301    -0.36 !
+ATOM 2C1  CG3C51    0.29 !
+BOND 1O3  2C1
+!    I    J    K    L      R(IK)   T(IKJ)    PHI   T(JKL)   R(KL)
+IC   1C2  1C3  1O3  2C1    1.5128  108.83  113.29  116.91   1.4039  ! psi
+IC   1C3  1O3  2C1  2O5    1.5110  116.91   65.46  109.52   1.4630  ! phi
+IC   1O3  2O5 *2C1  2C2    1.4040  109.53 -123.55  112.55   1.5070
+IC   2O5  1O3 *2C1  2H1    1.4630  109.52 -116.62  107.54   1.1057
+
+! fourth linkage on chain B, Aceric-O2  to galactose-beta-C1
+! equatorial-axial 1->2 linkage
+PRES chb4           0.02 ! (i)1->2(i-1) equatorial at C1 and axial at C2
+dele atom 1HO2
+dele atom 2HO1
+dele atom 2O1
+ATOM 1C2  CG3C51    0.09 !
+ATOM 1O2  OC301    -0.36 !
+ATOM 2C1  CC3162    0.29 !
+BOND 1O2  2C1
+!    I    J    K    L      R(IK)   T(IKJ)    PHI   T(JKL)   R(KL)
+IC   1C1  1C2  1O2  2C1    1.4742  111.77 -132.78  118.52   1.3902  ! psi
+IC   1C2  1O2  2C1  2O5    1.5137  118.52 -168.07  108.63   1.4500  ! phi
+IC   1O2  2O5 *2C1  2C2    1.3903  108.62  122.16  110.89   1.5315
+IC   2O5  1O2 *2C1  2H1    1.4500  108.63  121.92  111.32   1.0837
+
+
+!------------- 12 af pyr-o4-c1-fur ------------------------------------
+! beta-alpha 1->2 linkage
+PRES 12af           0.02 ! (i)1->3(i-1) axial at C1 and axial at C3
+dele atom 1HO2
+dele atom 2HO1
+dele atom 2O1
+ATOM 1C2  CC3161    0.09 !
+ATOM 1O2  OC301    -0.36 !
+ATOM 2C1  CC3152    0.29 !
+BOND 1O2  2C1
+
+!---First Linkage for chain C
+!-- KDO alpha-C2 to Galacturonic O3 (C2 in KDO is same as C1 in other pyranoses)
+! axial-axial 1->3 linkage based on 13aa
+PRES cc1          -0.053 ! (i)1->3(i-1) axial at C1 and axial at C3
+dele atom 1HO3
+dele atom 2HO2
+dele atom 2O2
+ATOM 1C3  CC3161    0.119 !
+ATOM 1O3  OC301    -0.319 !
+ATOM 2C2  CG301     0.147 !
+BOND 1O3  2C2
+
+!---- Chain C linkage 2 Rhamnose C1 to KDO O5 (equiv to O4 in pyranoses)
+! axial-axial 1->4 linkage
+! use when both units are galactose
+! CITSIH10
+PRES cc2           0.02 ! (i)1->4(i-1) axial at C1 and axial at C4
+dele atom 1HO5
+dele atom 2HO1
+dele atom 2O1
+
+ATOM 1C5  CG301    0.09 !
+ATOM 1O5  OG301    -0.36 !
+ATOM 2C1  CC3162    0.29 !
+BOND 1O5  2C1
+
+!---First Linkage for chain D
+!-- DHA alpha-C2 to Galacturonic O3 (C2 in KDO is same as C1 in other pyranoses)
+! axial-axial 1->3 linkage based on 13aa
+PRES dhg2          -0.206 ! (i)1->3(i-1) axial at C1 and axial at C3
+dele atom 1HO3
+dele atom 2HO2
+dele atom 2O2
+ATOM 1C3  CC3161    0.09 !
+ATOM 1O3  OC301    -0.45 !
+ATOM 2C2  CG301     0.154 !
+BOND 1O3  2C2
+
+!---- Chain D linkage 2 Arabinofuranose C1 to DHA-unprotonated O5 (equiv to O4 in pyranoses)
+! beta-axial 1->4 linkage
+! use when both units are galactose
+! CITSIH10
+PRES dc3           0.046 ! (i)1->4(i-1) axial at C1 and axial at C4
+dele atom 1HO5
+dele atom 2HO1
+dele atom 2O1
+
+ATOM 1C5  CG301    0.10 !
+ATOM 1O5  OG301    -0.364 !
+ATOM 2C1  CC3152    0.31 !
+BOND 1O5  2C1
+
+PRES galapp       0.00 ! patch for protonated aspartic acid, proton on od2
+                       ! via acetic acid, use in a patch statement and
+                       ! follow with AUTOgenerate ANGLes DIHEdrals command
+GROUP                  
+ATOM C6   cc2o2      0.73 
+ATOM O61  oc2d2   -0.55 ! 
+ATOM O62  Oc311    -0.61 !
+ATOM Ho62  hcp1       0.43
+BOND O62 Ho62   
+
+PRES KDOup       -0.826 ! patch for protonated aspartic acid, proton on od2
+                       ! via acetic acid, use in a patch statement and
+                       ! follow with AUTOgenerate ANGLes DIHEdrals command
+delete atom h1b
+
+GROUP
+atom c2   cg301     0.243
+ATOM C1   CC2O2     0.520  !
+ATOM O1a  OC2D2    -0.760  !
+ATOM O1b  OC2D2    -0.760  !
+
+
+!--- Patch to change B side chain from wine to celery 
+!        after deleting RHM and ARAF from ARAP
+!    Need to re-protonate O2 and O3
+!    Copied from ARBP above in this file
+PRES w2c   0.00
+GROU                       !               C4 |        C1
+ATOM C2   CC3161    0.140  !              / \ O3   H2 /  \
+ATOM H2   HCA1      0.090  !            H4   \|    | /    O1-HO1
+ATOM O2   OC311    -0.650  !                  C3---C2
+ATOM HO2  HCP1      0.420  !                  |    |
+GROU                       !                  H3   O2-HO2
+ATOM C3   CC3161    0.140  !
+ATOM H3   HCA1      0.090  !
+ATOM O3   OC311    -0.650  !
+ATOM HO3  HCP1      0.420  !
+
+bond o3 ho3 o2 ho2
+
+END
+

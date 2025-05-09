@@ -1,0 +1,643 @@
+* MFC adding parameters by analogy for RG2 after patches
+*
+
+!-----------------------------------
+BONDS
+!-----------------------------------
+!-- Apiose from CGENFF
+CG3C50 CG3C52  195.00     1.5180 ! /tmp/php , from CG3C51 CG3C52, penalty= 6
+
+!-- Apiose after patch to galacturonic acid
+CC3152 OG3C51  350.00     1.4250 ! THF, nucleotide CSD/NDB survey, 5/30/06,viv
+CC3152 HGA1    307.00     1.1000 ! THF, THF neutron diffr., 5/30/06, viv
+CG3C51 CC3152  195.00     1.5180 ! THF, nucleotide CSD/NDB survey, 5/30/06,viv
+CG3C51  OC301    360.00  1.395   ! erh xtal analysis on disac
+CG321   OC301    360.00  1.415   ! par35 CC32A OC30A
+CG3C50 CG3C51  195.00     1.5180 ! /tmp/php , from CG3C51 CG3C51, penalty= 6
+CG3C50 OG311   428.00     1.4200 ! /tmp/php , from CG3C51 OG311, penalty= 6
+
+!-- Aceric from cgenff
+CG2O3  CG3C50  250.00     1.4900 ! /tmp/php , from CG2O3 CG3C51, penalty= 6
+
+!--- acetylation of aceric acid
+CG3C50  OC301    360.00  1.395   ! erh xtal analysis on disac
+
+!--- KDO from CGENFF
+CG2O2  CG301   200.00     1.5220 ! ***** , from CG2O2 CG311, penalty= 8
+CG301  OG3C61  360.00     1.4150 ! ***** , from CG321 OG3C61, penalty= 12
+CG301  HGA1    309.00     1.1110 ! PROT alkane update, adm jr., 3/2/92
+
+!--- KDO cgenff for linkage
+CG301  OC301    360.00  1.415   ! og disac model compounds 2 3 og/rmv crystals
+CC3162  Og301    360.00  1.395   ! og disac model compounds 2 3 og/rmv crystals
+
+!------- DHA for linkage to arabinofuranose
+CC3152  Og301    360.00  1.395   ! erh xtal analysis on disac
+CC2O2   OC311    525.00  1.260   ! par22 OC  CC
+
+!----- Copied from older par_all36_cgenff.prm, missing in newer version
+CG311  OG3C61  360.00     1.4150 ! pepr, from CG321 OG3C61, not optimized, yxu, RNA
+
+!--- KDOup patch
+CG301   CC2O2    200.00  1.522   ! par22 CT1 CC
+
+!-----------------------------------
+ANGLES
+!-----------------------------------
+
+!-- Apiose from CGENFF
+CG3C50 CG321  OG311    75.70    110.10 ! /tmp/php , from CG3C51 CG321 OG311, penalty= 0.8
+CG321  CG3C50 CG3C51   58.00    115.00    8.00   2.56100 ! /tmp/php , from CG321 CG3C51 CG3C51, penalty= 6
+CG321  CG3C50 CG3C52   58.00    115.00    8.00   2.56100 ! /tmp/php , from CG321 CG3C51 CG3C52, penalty= 6
+CG321  CG3C50 OG311    58.00    110.00   11.16   2.56100 ! /tmp/php , from CG321 CG3C50 CG321, penalty= 45
+CG3C51 CG3C50 CG3C52   58.00    109.50   11.16   2.56100 ! /tmp/php , from CG3C51 CG3C51 CG3C52, penalty= 6
+CG3C52 CG3C50 OG311    75.70    110.00 ! /tmp/php , from CG3C52 CG3C51 OG311, penalty= 6
+CG3C50 CG3C52 OG3C51   45.00    111.10 ! /tmp/php , from CG3C51 CG3C52 OG3C51, penalty= 0.8
+CG3C50 CG3C52 HGA2     35.00    111.40   22.53   2.17900 ! /tmp/php , from CG3C51 CG3C52 HGA2, penalty= 0.8
+CG3C50 CG3C51 HGA1     35.00    111.40   22.53   2.17900  
+                          ! /tmp/php , from CG3C51 CG3C51 HGA1, penalty= 0.8
+OG311  CG3C51 OG3C51  110.00    112.00  
+                          ! /tmp/php , from NG301 CG3C51 OG3C51, penalty= 33.6
+CG3C50 OG311  HGP1     50.00    109.00  
+                          ! /tmp/php , from CG3C51 OG311 HGP1, penalty= 0.8
+CG3C51 CG3C50 OG311    75.70    110.10  
+                          ! /tmp/php , from CG3C51 CG3C51 OG311, penalty= 6
+CG3C50 CG3C51 CG3C51   58.00    109.50   11.16   2.56100  
+                          ! /tmp/php , from CG3C51 CG3C51 CG3C51, penalty= 0.8
+CG3C50 CG3C51 OG311    75.70    110.10  
+                          ! /tmp/php , from CG3C51 CG3C51 OG311, penalty= 0.8
+
+!-- Apiose to galactose patch -- copied from other places
+OC301  CG3C51 HGA1     45.90    108.50 ! OG301  CG3C51 HGA1  from all36_cgenff
+OC301  CG3C51 OG3C51  110.00    112.00 ! OG311  CG3C51 OG3C51 from above
+OC301  CG3C51 CG3C51   58.00    106.50    8.00   2.561 ! 
+CC3161  OC301 CG3C51   50.00   109.20                   ! CC311C  OC301   CC31
+
+! for Rhamnose 1-3' Apiose
+CC3162  OC301   CG321    95.00   109.70  ! par35 CC33A  OC30A CC32A
+OC301   CG321   HGA2     60.00   109.50  ! par34 HCA2 CC32A OC30A
+OC301   CG321   CG3C50   45.00   106.00  ! og fit compounds 11 and 12
+
+!-- Patch omx2 Chain A fucose
+CC3161  OC301   CC331    95.00   109.70  ! par35 CC33A  OC30A CC32A
+
+
+!--angles---Aceric Acid CGENFF ------------------------
+CG3C50 CG2O3  OG2D2    40.00    116.00   50.00   2.35300  
+                          ! /tmp/php , from CG3C51 CG2O3 OG2D2, penalty= 0.8
+CG2O3  CG3C50 OG311    50.00    106.00  
+                          ! /tmp/php , from CG2O3 CG3C53 NG3P2, penalty= 46
+CG3C51 CG3C50 CG3C51   58.00    109.50   11.16   2.56100  
+                          ! /tmp/php , from CG3C51 CG3C51 CG3C51, penalty= 6
+CG331  CG3C51 CG3C50   58.00    115.00    8.00   2.56100  
+                          ! /tmp/php , from CG331 CG3C51 CG3C51, penalty= 0.8
+CG3C50 CG3C51 OG3C51   45.00    111.10  
+                          ! /tmp/php , from CG3C51 CG3C51 OG3C51, penalty= 0.8
+!-- Aceric to galactose patch chb4
+CC3162  OC301 CG3C51   50.00   109.20                   ! CC311C  OC301   CC31
+OC301  CG3C51 CG3C50   58.00    106.50    8.00   2.561 ! 
+
+!-------- Aceric acid acetylation ------------------------------
+CG3C51 CG3C50 Oc301    58.00    106.50    8.00   2.561 ! THF2, THF-2'OMe c3'-c2'
+CG3C51 CG3C50 cg2o3    58.00    109.50    8.00   2.561 ! THF2, THF-2'OMe c3'-c2'
+oc301  CG3C50 cg2o3    58.00    109.50    8.00   2.561 ! THF2, THF-2'OMe c3'-c2'
+CC2O5   OC301   Cg3c50   40.00   109.60  30.00  2.2651 ! CG2O2  OG302  CG311
+
+!--- KDO from CGENFF
+CG301  CG2O2  OG2D1    70.00    125.00   20.00   2.44200  
+                          ! ***** , from CG311 CG2O2 OG2D1, penalty= 1.2
+CG301  CG2O2  OG311    55.00    110.50  
+                          ! ***** , from CG311 CG2O2 OG311, penalty= 1.2
+CG2O2  CG301  CG321    52.00    108.00  
+                          ! ***** , from CG2O2 CG311 CG321, penalty= 8
+CG2O2  CG301  OG311   112.00    111.00  
+                          ! ***** , from CG2O5 CG311 OG311, penalty= 10
+CG2O2  CG301  OG3C61   45.00    109.00 
+                           ! ***** , from CG2O3 CG301 OG301, penalty= 19
+CG321  CG301  OG311    75.70    110.10 
+                           ! ***** , from CG331 CG301 OG311, penalty= 0.9
+CG321  CG301  OG3C61   45.50    114.50 
+                           ! ***** , from CG321 CG301 OG301, penalty= 6.5
+OG311  CG301  OG3C61   45.00    116.50 
+                           ! ***** , from OG301 CG301 OG311, penalty= 6.5
+CG311  CG311  OG3C61   45.00    111.50 
+                           ! ***** , from CG321 CG321 OG3C61, penalty= 4.6
+CG301  CG321  CG311    58.35    113.50   11.16   2.56100 
+                           ! ***** , from CG301 CG321 CG321, penalty= 0.6
+CG301  OG3C61 CG311    95.00    109.70 
+                          ! ***** , from CG321 OG3C61 CG321, penalty= 2.4
+!----- Copied from older par_all36_cgenff.prm, missing in newer version
+OG3C61 CG311  HGA1     45.00    109.50 ! pepr, from OG3C61 CG321 HGA2, not optimized, yxu, RNA
+
+!------------------------------------------------
+!---CGENFF for linkage of KDO to gla (from above)
+CC3161  Oc301  CG301    95.00    109.70 
+                          ! /tmp/php , from CG301 OG301 CG331, penalty= 1.5
+CG2O2  CG301  Oc301    45.00    109.00  
+                          ! /tmp/php , from CG2O3 CG301 OG301, penalty= 12.5
+CG321  CG301  Oc301    45.50    114.50 ! DMBU, dimethoxybutane, sna
+Oc301  CG301  OG3C61   70.49    107.00 
+                          ! /tmp/php , from OG301 CG301 OG301, penalty= 6.5
+
+!--- Chain 3 RHM to KDO ---CHECK THESE
+CG301  CG311  OG311    75.70    110.10 ! PROT MeOH, EMB, 10/10/89
+CG311  CG301  OG301    45.50    114.50 ! DMBU, dimethoxybutane, sna
+CG311  CG301  HGA1     50.00    109.50 ! PROT Alanine Dipeptide ab initio calc's
+OG301  CG301  HGA1     50.00    109.50 ! PROT Alanine Dipeptide ab initio calc's
+CC3162  Og301  CG301    95.00    109.70 
+                          ! /tmp/php , from CG301 OG301 CG331, penalty= 1.5
+HCA1    CC3162  Og301    55.00   108.89  ! og 1/06 EtOH NIST IR fit
+CG301  CG311  OG3C61   45.50    114.50 
+                           ! ***** , from CG321 CG301 OG301, penalty= 6.5
+Oc3C61 Cc3162  OG301   45.00    110.50 ! DIXB, dioxane
+Cc3161  Cc3162  OG301    75.70    110.10 ! PROT MeOH, EMB, 10/10/89
+
+!---------- DHA ----------------------
+CG2O3  CG311  CG301    52.00    108.00 ! PROT adm jr. 5/02/91, acetic acid pure 
+!-- !-----------DHA to arabinofuranose patch ----------
+CC3152  Og301  CG301    95.00    109.70 
+Og301   CC3152  CC3151   45.00   105.00  ! erh xtal anal on disac/furanose 3/09
+OC3C51 CC3152 Og301      45.00   116.50  ! par_carb, OC3C61 CC3162 OC311
+Og301  CC3152 HCA1       55.00   108.89  ! og 1/06 EtOH NIST IR fit; par_carb, H
+
+!--------- Glucuronic acid protonated -------------------------
+CC3163  CC2O2   OC311    40.00   114.00  50.00  2.388  ! og amop amol and xtals
+OC2D2   CC2O2   OC311   100.00   132.00  70.00  2.225  ! og amop amol and xtals
+CC2o2   OC311   HCP1     50.00   109.00  ! sng mod (qm and crystal data) II
+
+!-- DHA unprotonated (negative 2) from cgenff
+CG2O3  CG301  CG321    52.00    108.00 ! /tmp/php , from CG2O3 CG301 CG331, penalty= 0.9
+CG2O3  CG301  OG3C61   45.00    109.00 ! /tmp/php , from CG2O3 CG301 OG301, penalty= 6.5
+CG2O3  CG311  OG3C61   45.00    109.00 ! /tmp/php , from CG2O3 CG311 OG301, penalty= 6.5
+
+!-- For patch dhg2 from DDHA to GLA
+CG2O3  CG301  Oc301    45.00    109.00  
+                          ! /tmp/php , from CG2O3 CG301 OG301, penalty= 12.5
+
+!---Angles for KDO patch KDOup
+OC2D2   CC2O2   cg301   100.00   132.00  70.00  2.225  ! og amop amol and xtals
+CC2O2   CG301  OC301   45.00   103.00  ! og amop mp2/631gd + xtals
+CC2O2   CG301  OG3C61   45.00   103.00  ! og amop mp2/631gd + xtals
+CC2O2   CG301  CG321   52.00   108.00  ! par22 CT1  CT1  CC
+
+
+!==========================
+DIHEDRALS
+!==========================
+!-- Apiose from CGENFF
+OG311  CG321  CG3C50 CG3C51     2.5000  1   180.00 ! /tmp/php , from OG311 CG321 CG3C51 CG3C51, penalty= 6
+OG311  CG321  CG3C50 CG3C51     0.4000  2     0.00 ! /tmp/php , from OG311 CG321 CG3C51 CG3C51, penalty= 6
+OG311  CG321  CG3C50 CG3C51     0.8000  3   180.00 ! /tmp/php , from OG311 CG321 CG3C51 CG3C51, penalty= 6
+OG311  CG321  CG3C50 CG3C51     0.2000  4   180.00 ! /tmp/php , from OG311 CG321 CG3C51 CG3C51, penalty= 6
+OG311  CG321  CG3C50 CG3C52     0.2000  3   180.00 ! /tmp/php , from OG311 CG321 CG3C51 CG3C52, penalty= 6
+OG311  CG321  CG3C50 OG311      3.4000  1   180.00 ! /tmp/php , from OG311 CG321 CG3C51 OG3C51, penalty= 35.6
+HGA2   CG321  CG3C50 CG3C51     0.1600  3     0.00 ! /tmp/php , from HGA2 CG321 CG3C51 CG3C51, penalty= 6
+HGA2   CG321  CG3C50 CG3C52     0.1600  3     0.00 ! /tmp/php , from HGA2 CG321 CG3C51 CG3C52, penalty= 6
+HGA2   CG321  CG3C50 OG311      0.1600  3     0.00 ! /tmp/php , from HGA2 CG321 CG3C51 OG3C51, penalty= 35.6
+CG3C50 CG321  OG311  HGP1       1.1300  1     0.00 ! /tmp/php , from CG3C51 CG321 OG311 HGP1, penalty= 0.8
+CG3C50 CG321  OG311  HGP1       0.1400  2     0.00 ! /tmp/php , from CG3C51 CG321 OG311 HGP1, penalty= 0.8
+CG3C50 CG321  OG311  HGP1       0.2400  3     0.00 ! /tmp/php , from CG3C51 CG321 OG311 HGP1, penalty= 0.8
+CG321  CG3C50 CG3C51 CG3C51     0.1900  3     0.00 ! /tmp/php , from CG321 CG3C51 CG3C51 CG3C51, penalty= 6
+CG321  CG3C50 CG3C51 OG311      0.1400  3     0.00 ! /tmp/php , from CG321 CG3C51 CG3C51 OG311, penalty= 6
+CG321  CG3C50 CG3C51 HGA1       0.1900  3     0.00 ! /tmp/php , from CG321 CG3C51 CG3C51 HGA1, penalty= 6
+CG3C52 CG3C50 CG3C51 CG3C51     0.4100  3   180.00 ! /tmp/php , from CG3C51 CG3C51 CG3C51 CG3C52, penalty= 6
+CG3C52 CG3C50 CG3C51 OG311      0.2000  3     0.00 ! /tmp/php , from CG3C52 CG3C51 CG3C51 OG311, penalty= 6
+CG3C52 CG3C50 CG3C51 HGA1       0.1900  3     0.00 ! /tmp/php , from CG3C52 CG3C51 CG3C51 HGA1, penalty= 6
+OG311  CG3C50 CG3C51 CG3C51     0.2000  3     0.00 ! /tmp/php , from CG3C51 CG3C51 CG3C51 OG311, penalty= 6
+OG311  CG3C50 CG3C51 OG311      0.0000  3     0.00 ! /tmp/php , from OG311 CG3C51 CG3C51 OG311, penalty= 6
+CG321  CG3C50 CG3C52 OG3C51     0.0000  3     0.00 ! /tmp/php , from CG3C52 CG3C51 CG3C52 OG3C51, penalty= 37
+CG321  CG3C50 CG3C52 HGA2       0.1900  3     0.00 ! /tmp/php , from CG321 CG3C51 CG3C52 HGA2, penalty= 6
+CG3C51 CG3C50 CG3C52 OG3C51     0.0000  3     0.00 ! /tmp/php , from CG3C51 CG3C51 CG3C52 OG3C51, penalty= 6
+CG3C51 CG3C50 CG3C52 HGA2       0.1900  3     0.00 ! /tmp/php , from CG3C51 CG3C51 CG3C52 HGA2, penalty= 6
+OG311  CG3C50 CG3C52 OG3C51     0.2000  3     0.00 ! /tmp/php , from OG311 CG3C51 CG3C52 OG3C51, penalty= 6
+OG311  CG3C50 CG3C52 OG3C51     0.6000  4   180.00 ! /tmp/php , from OG311 CG3C51 CG3C52 OG3C51, penalty= 6
+OG311  CG3C50 CG3C52 OG3C51     0.3000  5     0.00 ! /tmp/php , from OG311 CG3C51 CG3C52 OG3C51, penalty= 6
+OG311  CG3C50 CG3C52 OG3C51     0.5000  6     0.00 ! /tmp/php , from OG311 CG3C51 CG3C52 OG3C51, penalty= 6
+OG311  CG3C50 CG3C52 HGA2       0.1950  3   180.00 ! /tmp/php , from OG311 CG3C51 CG3C52 HGA2, penalty= 6
+CG321  CG3C50 OG311  HGP1       0.2900  1     0.00 ! /tmp/php , from CG3C52 CG3C51 OG311 HGP1, penalty= 37
+CG321  CG3C50 OG311  HGP1       0.6200  2     0.00 ! /tmp/php , from CG3C52 CG3C51 OG311 HGP1, penalty= 37
+CG321  CG3C50 OG311  HGP1       0.0500  3     0.00 ! /tmp/php , from CG3C52 CG3C51 OG311 HGP1, penalty= 37
+CG3C52 CG3C50 OG311  HGP1       0.2900  1     0.00 ! /tmp/php , from CG3C52 CG3C51 OG311 HGP1, penalty= 6
+CG3C52 CG3C50 OG311  HGP1       0.6200  2     0.00 ! /tmp/php , from CG3C52 CG3C51 OG311 HGP1, penalty= 6
+CG3C52 CG3C50 OG311  HGP1       0.0500  3     0.00 ! /tmp/php , from CG3C52 CG3C51 OG311 HGP1, penalty= 6
+OG311  CG3C51 OG3C51 CG3C52     1.6500  3   180.00 ! /tmp/php , from OG3C51 CG3C52 OG3C51 CG3C52, penalty= 33.6
+CG3C50 CG3C52 OG3C51 CG3C51     0.5000  3     0.00 ! /tmp/php , from CG3C51 CG3C52 OG3C51 CG3C51, penalty= 0.8
+!-- end of apiose dihe from cgenff
+
+!-- After 1-2 patch to galacturonic
+CC3162  CC3161  OC301   CG3C51   0.13  1  180.0 ! og THP-1-O-2-CYHX
+CC3162  CC3161  OC301   CG3C51   0.25  2  180.0 ! "  MCSA fit
+CC3162  CC3161  OC301   CG3C51   0.06  3  180.0 ! "  MP2/cc-pVTZ//MP2/6-31G*
+OC301   CG3C51  CG3C51  OG311    2.87  1  180.0 ! erh aldopentose monosac
+OC301   CG3C51  CG3C51  OG311    0.03  2    0.0 ! " MCSA fit
+OC301   CG3C51  CG3C51  OG311    0.23  3    0.0 ! " MP2/cc-pVTZ//MP2/6-31G*
+OC301   CG3C51  CG3C51  HGA1     0.20  3    0.0 ! par27 X CTL1 CTL1 X
+OC301   CG3C51 CG3C51 CG3C50     2.0000  3   180.00 ! THF2, THF-2'OMe from NA, sugar,
+OC301   CG3C51 CG3C51 CG3C50     0.4000  5     0.00 ! THF2, THF-2'OMe from NA, sugar, ed
+OC301   CG3C51 CG3C51 CG3C50     0.8000  6     0.00 ! THF2, THF-2'OMe from NA, sugar, ed
+CC3161  CC3161  OC301   CG3C51   0.13  1  180.0 ! og THP-1-O-2-CYHX
+CC3161  CC3161  OC301   CG3C51   0.25  2  180.0 ! "  MCSA fit
+CC3161  CC3161  OC301   CG3C51   0.06  3  180.0 ! "  MP2/cc-pVTZ//MP2/6-31G*
+CC3161  OC301   CG3C51  OG3C51   0.52  1  180.0 !  pram model compound 4 (raman et al)
+CC3161  OC301   CG3C51  OG3C51   1.50  2    0.0 !   " MCSA fit
+CC3161  OC301   CG3C51  OG3C51   0.98  3    0.0 !   " MP2/cc-pVTZ//MP2/6-31G*
+CC3161  OC301   CG3C51  CG3C51   1.19  1  180.0 !  pram model compound 4 (raman et al)
+CC3161  OC301   CG3C51  CG3C51   0.16  2  180.0 !   " MCSA fit
+CC3161  OC301   CG3C51  CG3C51   0.49  3  180.0 !   " MP2/cc-pVTZ//MP2/6-31G*
+OC301  CG3C51   OG3C51  CG3C52   0.5000  3     0.00 ! THF, 05/30/06, viv
+OC301  CG3C51   OG3C51  CG3C51   0.5000  3     0.00 ! THF, 05/30/06, viv
+CC3161  OC301   CG3C51  HGA1     0.284 3    0.0 ! OMe-THF  HCA1C2  CC312C  OC301
+HCA1    CC3161  OC301   CG3C51   0.284 3    0.0 ! CC311D  OC301   CC311C  HCA1
+!-- end of apiose to galacturonic dihe 
+
+!-- Rhamnose to Apiose dihe
+OC301  CG321  CG3C50 OG311      0.2000  3   180.00 ! 3POMP, 3-phenoxymethylpyrro
+OC301  CG321  CG3C50 CG3C52     0.2000  3   180.00 ! 3POMP, 3-phenoxymethylpyrro
+OC301  CG321  CG3C50 CG3C51     0.2000  3   180.00 ! 3POMP, 3-phenoxymethylpyrro
+CG321   OC301   CC3162  OC3C61   0.14  1    0.0 ! og OMeTHP compounds 2 and 3
+CG321   OC301   CC3162  OC3C61   0.97  2    0.0 ! "  MCSA fit
+CG321   OC301   CC3162  OC3C61   0.11  3  180.0 ! "  MP2/cc-pVTZ//MP2/6-31G*
+CG3C50  CG321   OC301   CC3162   0.64  1  180.0 ! 
+CG3C50  CG321   OC301   CC3162   0.03  2  180.0 ! 
+CG3C50  CG321   OC301   CC3162   0.61  3    0.0 ! 
+CG321   OC301   CC3162  HCA1     0.284 3    0.0 ! par35 HCA2 CC32A OC30A CC32A
+CC3161  CC3162  OC301   CG321    0.22  1    0.0 ! og OMeTHP compounds 2 and 3
+CC3161  CC3162  OC301   CG321    0.28  2  180.0 ! "  MCSA fit
+CC3161  CC3162  OC301   CG321    0.89  3    0.0 ! "  MP2/cc-pVTZ//MP2/6-31G*
+CC3162  OC301   CG321   HGA2     0.284 3    0.0 ! par35 HCA2 CC32A OC30A CC32A
+
+
+!-- methyl on xylose chain A
+CC3162  CC3161  OC301   CC331    0.22  1    0.0 ! og OMeTHP compounds 2 and 3
+CC3162  CC3161  OC301   CC331    0.28  2  180.0 ! "  MCSA fit
+CC3162  CC3161  OC301   CC331    0.89  3    0.0 ! "  MP2/cc-pVTZ//MP2/6-31G*
+CC3161  OC301   CC331   HCA3     0.284 3    0.0 ! par35 HCA3 CC33A OC30A CC32A
+CC331   OC301   CC3161  HCA1     0.284 3    0.0 ! par35 HCA2 CC32A OC30A CC32A
+CC3161  CC3161  OC301   CC331    0.22  1    0.0 ! og OMeTHP compounds 2 and 3
+CC3161  CC3161  OC301   CC331    0.28  2  180.0 ! "  MCSA fit
+CC3161  CC3161  OC301   CC331    0.89  3    0.0 ! "  MP2/cc-pVTZ//MP2/6-31G*
+
+
+!-- Dihedrals from cgenff for Aceric Acid ---------------------
+OG2D2  CG2O3  CG3C50 CG3C51     0.1600  3     0.00 
+               ! /tmp/php , from OG2D2 CG2O3 CG3C51 CG3C52, penalty= 6.4
+HGA3   CG331  CG3C51 CG3C50     0.1600  3     0.00 
+               ! /tmp/php , from HGA3 CG331 CG3C51 CG3C51, penalty= 0.8
+CG2O3  CG3C50 CG3C51 CG331      0.1400  3     0.00 
+               ! /tmp/php , from CG2O3 CG3C51 CG3C52 CG3C52, penalty= 41
+CG2O3  CG3C50 CG3C51 CG3C51     0.1400  3     0.00 
+               ! /tmp/php , from CG2O3 CG3C51 CG3C52 CG3C52, penalty= 10.4
+CG2O3  CG3C50 CG3C51 OG311      0.0000  3     0.00 
+               ! /tmp/php , from NG2R61 CG3C51 CG3C51 OG311, penalty= 58
+CG2O3  CG3C50 CG3C51 OG3C51     0.1400  3     0.00 
+               ! /tmp/php , from CG2O3 CG3C51 CG3C52 CG3C52, penalty= 58
+CG2O3  CG3C50 CG3C51 HGA1       0.1400  3     0.00 
+               ! /tmp/php , from CG2O3 CG3C51 CG3C52 HGA2, penalty= 10
+CG3C51 CG3C50 CG3C51 CG331      0.1900  3     0.00 
+               ! /tmp/php , from CG331 CG3C51 CG3C51 CG3C51, penalty= 6
+CG3C51 CG3C50 CG3C51 CG3C51     0.4100  3   180.00 
+               ! /tmp/php , from CG3C51 CG3C51 CG3C51 CG3C51, penalty= 6
+CG3C51 CG3C50 CG3C51 OG311      0.2000  3     0.00 
+               ! /tmp/php , from CG3C51 CG3C51 CG3C51 OG311, penalty= 6
+CG3C51 CG3C50 CG3C51 OG3C51     0.0000  3     0.00 
+               ! /tmp/php , from CG3C51 CG3C51 CG3C51 OG3C51, penalty= 6
+CG3C51 CG3C50 CG3C51 HGA1       0.1900  3     0.00 
+               ! /tmp/php , from CG3C51 CG3C51 CG3C51 HGA1, penalty= 6
+OG311  CG3C50 CG3C51 HGA1       0.1950  3     0.00 
+               ! /tmp/php , from OG311 CG3C51 CG3C51 HGA1, penalty= 6
+CG3C51 CG3C50 OG311  HGP1       0.2900  1     0.00 
+               ! /tmp/php , from CG3C51 CG3C51 OG311 HGP1, penalty= 6
+CG3C51 CG3C50 OG311  HGP1       0.6200  2     0.00 
+               ! /tmp/php , from CG3C51 CG3C51 OG311 HGP1, penalty= 6
+CG3C51 CG3C50 OG311  HGP1       0.0500  3     0.00 
+               ! /tmp/php , from CG3C51 CG3C51 OG311 HGP1, penalty= 6
+CG3C50 CG3C51 CG3C51 OG311      0.2000  3     0.00 
+               ! /tmp/php , from CG3C51 CG3C51 CG3C51 OG311, penalty= 0.8
+CG3C50 CG3C51 CG3C51 OG3C51     0.0000  3     0.00 
+               ! /tmp/php , from CG3C51 CG3C51 CG3C51 OG3C51, penalty= 0.8
+CG3C50 CG3C51 CG3C51 HGA1       0.1900  3     0.00 
+               ! /tmp/php , from CG3C51 CG3C51 CG3C51 HGA1, penalty= 0.8
+CG3C50 CG3C51 OG311  HGP1       0.2900  1     0.00 
+               ! /tmp/php , from CG3C51 CG3C51 OG311 HGP1, penalty= 0.8
+CG3C50 CG3C51 OG311  HGP1       0.6200  2     0.00 
+               ! /tmp/php , from CG3C51 CG3C51 OG311 HGP1, penalty= 0.8
+CG3C50 CG3C51 OG311  HGP1       0.0500  3     0.00 
+               ! /tmp/php , from CG3C51 CG3C51 OG311 HGP1, penalty= 0.8
+OG3C51 CG3C51 OG311  HGP1       0.2900  1     0.00 
+               ! /tmp/php , from CG3C52 CG3C51 OG311 HGP1, penalty= 48
+OG3C51 CG3C51 OG311  HGP1       0.6200  2     0.00 
+               ! /tmp/php , from CG3C52 CG3C51 OG311 HGP1, penalty= 48
+OG3C51 CG3C51 OG311  HGP1       0.0500  3     0.00 
+               ! /tmp/php , from CG3C52 CG3C51 OG311 HGP1, penalty= 48
+CG3C50 CG3C51 OG3C51 CG3C51     0.5000  3     0.00 
+               ! /tmp/php , from CG3C51 CG3C51 OG3C51 CG3C51, penalty= 0.8
+OG311  CG3C51 OG3C51 CG3C51     0.0000  3     0.00 
+               ! /tmp/php , from NG301 CG3C51 OG3C51 CG3C51, penalty= 33.6
+Oc301  CG3C50 CG3C51 OG3C51     0.2000  3     0.00 
+Oc301  CG3C50 CG3C51 OG3C51     0.6000  4   180.00 
+Oc301  CG3C50 CG3C51 OG3C51     0.3000  5     0.00 
+Oc301  CG3C50 CG3C51 OG3C51     0.5000  6     0.00 
+!-- unacetylated acer
+Og311  CG3C50 CG3C51 OG3C51     0.2000  3     0.00 
+Og311  CG3C50 CG3C51 OG3C51     0.6000  4   180.00 
+Og311  CG3C50 CG3C51 OG3C51     0.3000  5     0.00 
+Og311  CG3C50 CG3C51 OG3C51     0.5000  6     0.00 
+
+OC301   CG3C50  CG3C51  HGA1     0.20  3    0.0 ! par27 X CTL1 CTL1 X
+
+!-- After patch chb4 on chain b galactose to aceric
+OC301   CG3C51  CG3C51  OC301    2.87  1  180.0 ! erh aldopentose monosac
+OC301   CG3C51  CG3C51  OC301    0.03  2    0.0 ! " MCSA fit
+OC301   CG3C51  CG3C51  OC301    0.23  3    0.0 ! " MP2/cc-pVTZ//MP2/6-31G*
+OC301   CG3C51 CG3C51 OG3C51     0.2000  3     0.00 
+               ! /tmp/php , from OG311 CG3C51 CG3C51 OG3C51, penalty= 6
+OC301  CG3C51 CG3C51 OG3C51     0.6000  4   180.00 
+               ! /tmp/php , from OG311 CG3C51 CG3C51 OG3C51, penalty= 6
+CG3C51  OC301   CC3162  OC3C61   0.05  1  180.0 ! og THP-1-O-2-CYHX
+CG3C51  OC301   CC3162  OC3C61   0.91  2    0.0 ! "  MCSA fit
+CG3C51  OC301   CC3162  OC3C61   1.27  3  180.0 ! "  MP2/cc-pVTZ//MP2/6-31G*
+
+CG3C50 CG3C51 OC301  CC3162      0.1000  1   180.00 
+               ! THF2, THF-2'OMe c-C2'-OM-cm, from Nucl. Acids, ed
+CG3C50 CG3C51 OC301  CC3162      1.6500  2   180.00 
+               ! THF2, THF-2'OMe c-C2'-OM-cm, from Nucl. Acids, ed
+CG3C50 CG3C51 OC301  CC3162      0.4500  3     0.00 
+               ! THF2, THF-2'OMe c-C2'-OM-cm, from Nucl. Acids, 
+!-- without acetylation patch on acer
+CG2o3  CG3C50 OG311  HGP1       0.2900  1     0.00 
+CG2o3  CG3C50 OG311  HGP1       0.6200  2     0.00 
+CG2o3  CG3C50 OG311  HGP1       0.0500  3     0.00 
+!--- end after without patch
+
+CC3161  CC3162  OC301   CG3C51   0.73  1    0.0 ! og THP-1-O-1-THP
+CC3161  CC3162  OC301   CG3C51   0.61  2  180.0 ! "  MCSA fit
+CC3161  CC3162  OC301   CG3C51   0.00  3  180.0 ! "  MP2/cc-pVTZ//MP2/6-31G*
+
+CG3C51  CG3c51   OC301   CC3162   0.64  1  180.0 ! 
+CG3C51  CG3c51   OC301   CC3162   0.03  2  180.0 ! 
+CG3C51  CG3c51   OC301   CC3162   0.61  3    0.0 ! 
+CG3C51 CG3C50 CG3C51 OC301      0.2000  3     0.00 ! par22, X   CT1 CT2 X; erh 3
+CG3C51  OC301   CC3162  HCA1     0.284 3    0.0 ! par35 HCA2 CC32A OC30A CC32A
+CC3162  OC301   CG3C51  HGA1     0.284 3    0.0 ! OMe-THF  HCA1C2  CC312C  OC301
+
+CG2O3  CG3C50 CG3C51 OC301      0.1400  3     0.00 ! /tmp/php , from CG2O3 CG3C51 CG3C52 CG3C52, penalty= 58
+
+!----------------------------------
+!---------- KDO from CGENFF
+OG2D1  CG2O2  CG301  CG321      0.0500  6   180.00 ! ***** , from OG2D1 CG2O2 CG311 CG321, penalty= 8
+OG2D1  CG2O2  CG301  OG311      0.0000  2     0.00 ! ***** , from OG2D3 CG2O5 CG311 OG311, penalty= 18.5
+OG2D1  CG2O2  CG301  OG3C61     0.0000  2     0.00 ! ***** , from OG2D3 CG2O5 CG311 OG311, penalty= 33.5
+OG311  CG2O2  CG301  CG321      0.0500  6   180.00 ! ***** , from OG311 CG2O2 CG311 CG321, penalty= 8
+OG311  CG2O2  CG301  OG311      0.0000  6   180.00 ! ***** , from OG311 CG2O2 CG321 NG321, penalty= 46.2
+OG311  CG2O2  CG301  OG3C61     0.0000  6   180.00 ! ***** , from OG311 CG2O2 CG321 NG321, penalty= 46.2
+CG301  CG2O2  OG311  HGP1       2.0500  2   180.00 ! ***** , from CG311 CG2O2 OG311 HGP1, penalty= 1.2
+CG2O2  CG301  CG321  CG311      0.2000  3     0.00 ! ***** , from CG2O2 CG311 CG321 CG321, penalty= 8.6
+CG2O2  CG301  CG321  HGA2       0.2000  3     0.00 ! ***** , from CG2O2 CG311 CG321 HGA2, penalty= 8
+OG311  CG301  CG321  CG311      0.8000  3     0.00 ! ***** , from OG301 CG301 CG321 CG331, penalty= 6.5
+OG311  CG301  CG321  HGA2       0.1600  3     0.00 ! ***** , from OG301 CG301 CG321 HGA2, penalty= 5
+OG3C61 CG301  CG321  CG311      0.8000  3     0.00 ! ***** , from OG301 CG301 CG321 CG331, penalty= 8
+OG3C61 CG301  CG321  HGA2       0.1600  3     0.00 ! ***** , from OG301 CG301 CG321 HGA2, penalty= 6.5
+CG2O2  CG301  OG311  HGP1       0.3500  1     0.00 ! ***** , from CG2O5 CG311 OG311 HGP1, penalty= 10
+CG2O2  CG301  OG311  HGP1       0.3700  2     0.00 ! ***** , from CG2O5 CG311 OG311 HGP1, penalty= 10
+CG2O2  CG301  OG311  HGP1       0.0100  3   180.00 ! ***** , from CG2O5 CG311 OG311 HGP1, penalty= 10
+CG321  CG301  OG311  HGP1       1.1300  1     0.00 ! ***** , from CG331 CG301 OG311 HGP1, penalty= 0.9
+CG321  CG301  OG311  HGP1       0.1400  2     0.00 ! ***** , from CG331 CG301 OG311 HGP1, penalty= 0.9
+CG321  CG301  OG311  HGP1       0.2400  3     0.00 ! ***** , from CG331 CG301 OG311 HGP1, penalty= 0.9
+OG3C61 CG301  OG311  HGP1       1.5500  1     0.00 ! ***** , from OG301 CG301 OG311 HGP1, penalty= 6.5
+OG3C61 CG301  OG311  HGP1       1.1700  2     0.00 ! ***** , from OG301 CG301 OG311 HGP1, penalty= 6.5
+OG3C61 CG301  OG311  HGP1       1.0700  3     0.00 ! ***** , from OG301 CG301 OG311 HGP1, penalty= 6.5
+CG2O2  CG301  OG3C61 CG311      0.2000  3     0.00 ! ***** , from CG2O3 CG301 OG301 CG331, penalty= 34
+CG321  CG301  OG3C61 CG311      0.5300  1   180.00 ! ***** , from CG321 CG321 OG3C61 CG321, penalty= 12.6
+CG321  CG301  OG3C61 CG311      0.6800  2     0.00 ! ***** , from CG321 CG321 OG3C61 CG321, penalty= 12.6
+CG321  CG301  OG3C61 CG311      0.2100  3   180.00 ! ***** , from CG321 CG321 OG3C61 CG321, penalty= 12.6
+CG321  CG301  OG3C61 CG311      0.1500  4     0.00 ! ***** , from CG321 CG321 OG3C61 CG321, penalty= 12.6
+OG311  CG301  OG3C61 CG311      1.0000  3     0.00 ! ***** , from OG3C61 CG321 OG3C61 CG321, penalty= 20.1
+CG311  CG311  CG311  CG311      0.5000  4   180.00 ! ***** , from CG311 CG311 CG311 CG321, penalty= 0.6
+CG311  CG311  CG311  OG3C61     0.1900  1   180.00 ! ***** , from CG321 CG321 CG321 OG3C61, penalty= 8.6
+CG311  CG311  CG311  OG3C61     1.0000  2   180.00 ! ***** , from CG321 CG321 CG321 OG3C61, penalty= 8.6
+CG311  CG311  CG311  OG3C61     0.6000  3     0.00 ! ***** , from CG321 CG321 CG321 OG3C61, penalty= 8.6
+CG311  CG311  CG311  OG3C61     0.0800  4   180.00 ! ***** , from CG321 CG321 CG321 OG3C61, penalty= 8.6
+
+CG321  CG311  CG311  OG3C61     0.1900  1   180.00 ! ***** , from CG321 CG321 CG321 OG3C61, penalty= 8
+CG321  CG311  CG311  OG3C61     1.0000  2   180.00 ! ***** , from CG321 CG321 CG321 OG3C61, penalty= 8
+CG321  CG311  CG311  OG3C61     0.6000  3     0.00 ! ***** , from CG321 CG321 CG321 OG3C61, penalty= 8
+OG311  CG311  CG311  OG3C61     0.2000  3     0.00 ! ***** , from OG311 CG311 CG321 OG303, penalty= 12
+OG3C61 CG311  CG311  HGA1       0.1950  3     0.00 ! ***** , from OG3C61 CG321 CG321 HGA2, penalty= 8
+CG311  CG311  CG321  CG301      0.2000  3     0.00 ! ***** , from CG311 CG311 CG321 CG311, penalty= 1.2
+OG311  CG311  CG321  CG301      2.0000  3   180.00 ! ***** , from OG311 CG311 CG321 CG311, penalty= 1.2
+OG311  CG311  CG321  CG301      0.4000  5     0.00 ! ***** , from OG311 CG311 CG321 CG311, penalty= 1.2
+OG311  CG311  CG321  CG301      0.8000  6     0.00 ! ***** , from OG311 CG311 CG321 CG311, penalty= 1.2
+HGA1   CG311  CG321  CG301      0.1950  3     0.00 ! ***** , from HGA1 CG311 CG321 CG311, penalty= 1.2
+CG311  CG311  OG3C61 CG301      0.5300  1   180.00 ! ***** , from CG321 CG321 OG3C61 CG321, penalty= 6.4
+CG311  CG311  OG3C61 CG301      0.6800  2     0.00 ! ***** , from CG321 CG321 OG3C61 CG321, penalty= 6.4
+CG311  CG311  OG3C61 CG301      0.2100  3   180.00 ! ***** , from CG321 CG321 OG3C61 CG321, penalty= 6.4
+CG311  CG311  OG3C61 CG301      0.1500  4     0.00 ! ***** , from CG321 CG321 OG3C61 CG321, penalty= 6.4
+HGA1   CG311  OG3C61 CG301      0.1950  3     0.00 ! ***** , from HGA2 CG321 OG3C61 CG321, penalty= 5.8
+
+!-- KDO-GLA linkage from CGENFF
+Cc3161  Cc3161  Oc301  CG301      0.4000  1     0.00 
+                ! /tmp/php , from CG331 CG311 OG301 CG331, penalty= 4.2
+Cc3161  Cc3161  Oc301  CG301      0.4900  3     0.00 
+                ! /tmp/php , from CG331 CG311 OG301 CG331, penalty= 4.2
+
+HcA1   Cc3161  Oc301  CG301      0.2840  3     0.00
+                ! /tmp/php , from HGA1 CG311 OG301 CG331, penalty= 2.7
+
+
+OG3C61 CG301  Oc301  Cc3161      0.5100  1     0.00 
+                    ! /tmp/php , from OG301 CG301 OG301 CG331, penalty= 8
+OG3C61 CG301  Oc301  Cc3161      0.6700  2     0.00 
+                    ! /tmp/php , from OG301 CG301 OG301 CG331, penalty= 8
+OG3C61 CG301  Oc301  Cc3161      0.2600  3     0.00 
+                    ! /tmp/php , from OG301 CG301 OG301 CG331, penalty= 8
+
+CG321  CG301  Oc301  Cc3161      1.1500  1     0.00  
+                    ! /tmp/php , from CG321 CG301 OG301 CG331, penalty= 1.5
+CG321  CG301  Oc301  Cc3161      0.2300  2   180.00  
+                    ! /tmp/php , from CG321 CG301 OG301 CG331, penalty= 1.5
+CG321  CG301  Oc301  Cc3161      0.4900  3     0.00  
+                    ! /tmp/php , from CG321 CG301 OG301 CG331, penalty= 1.5
+
+CG2O2  CG301  Oc301  Cc3161      0.2000  3     0.00 
+CG2O3  CG301  Oc301  Cc3161      0.2000  3     0.00   
+                   ! /tmp/php , from CG2O3 CG301 OG301 CG331, penalty= 14
+
+OG2D1  CG2O2  CG301  Oc301      0.0000  2     0.00 
+OG2D2  CG2O3  CG301  Oc301      0.0000  2     0.00 
+                   ! /tmp/php , from OG2D3 CG2O5 CG311 OG311, penalty= 33.5
+
+OG311  CG2O2  CG301  Oc301      0.0000  6   180.00
+                   ! /tmp/php , from OG311 CG2O2 CG321 NG321, penalty= 46.2
+Oc301  CG301  CG321  CG311      0.8000  3     0.00 ! /tmp/php , from OG301 CG301 CG321 CG331, penalty= 1.5
+
+Oc301  CG301  CG321  HGA2       0.1600  3     0.00 ! DMBU, dimethoxybutane, sna
+Oc301  CG301  OG3C61 CG311      1.0000  3     0.00 
+                   ! /tmp/php , from OG3C61 CG321 OG3C61 CG321, penalty= 19.1
+CG301  CG321  CG311  CG301      0.2000  3     0.00 ! DCA, Deoxycholic Acid, cacha, 03/06
+
+Cg311  Cg301  Cg311  Og3C61   0.31  3  180.0 ! og/sng thp
+HgA1    Cg301  Cg311  HgA1     0.20  3    0.0 ! par27 X CTL1 CTL1 X
+Cg301  Cg311  Og3C61  Cg301   0.20  3    0.0 ! og/sng thp
+Og301  CG301  CG311  CG321      0.8000  3     0.00 
+                       ! /tmp/php , from OG301 CG301 CG321 CG331, penalty= 1.5
+OG311  CG311  CG301  OG301      0.2000  3     0.00 
+                       ! ***** , from OG311 CG311 CG321 OG311, penalty= 4
+HGA1   CG301  CG311  CG321      0.1950  3     0.00 
+                       ! ***** , from HGA1 CG311 CG321 CG311, penalty= 1.2
+OG311  CG311  CG301  CG311      0.8000  6     0.00  
+                      ! ***** , from OG311 CG311 CG321 CG311, penalty= 1.2
+OG311  CG311  CG301  HGA1       0.1950  3     0.00 ! NA, sugar
+
+CG301  CG311  OG311  HGP1       1.3300  1     0.00 ! 
+CG301  CG311  OG311  HGP1       0.1800  2     0.00 ! 
+CG301  CG311  OG311  HGP1       0.4600  3     0.00 ! 
+CG301  CG311  CG311  OG311      0.1400  3     0.00 ! PROT, hydroxyl wild card
+OG301  CG301  CG311  HGA1       0.1950  3     0.00 ! NA, sugar
+OG301  CG301  CG311  OG3C61     0.2000  3     0.00 ! ***** , from OG311 CG311 CG
+CG311  CG311  CG301  OG301      0.1400  3     0.00 ! PROT, hydroxyl wild card
+
+CC3163  OC3C61  CC3162  Og301    0.41  1  180.0 ! og from
+CC3163  OC3C61  CC3162  Og301    0.89  2    0.0 ! " CC3163 OC3C61 CC3162 OC311
+CC3163  OC3C61  CC3162  Og301    0.05  3    0.0 ! "
+
+HCA1    CC3161  CC3162  Og301    0.20  3    0.0 ! par27 X CTL1 CTL1 X
+
+Og301   CC3162  CC3161  OC311    2.65  1  180.0 ! og ethylene glycol combo
+Og301   CC3162  CC3161  OC311    0.00  2    0.0 ! "
+Og301   CC3162  CC3161  OC311    0.13  3  180.0 ! "
+
+CC3161  CC3162  Og301   CG301   0.13  1  180.0 ! og THP-1-O-2-CYHX
+CC3161  CC3162  Og301   CG301   0.25  2  180.0 ! "  MCSA fit
+CC3161  CC3162  Og301   CG301   0.06  3  180.0 ! "  MP2/cc-pVTZ//MP2/6-31G*
+
+Cg301  Og301   CC3162  OC3C61   0.05  1  180.0 ! og THP-1-O-2-CYHX
+Cg301  Og301   CC3162  OC3C61   0.91  2    0.0 ! "  MCSA fit
+Cg301  Og301   CC3162  OC3C61   1.27  3  180.0 ! "  MP2/cc-pVTZ//MP2/6-31G*
+
+Cg311  CG301  Og301   CC3162   0.13  1  180.0 ! og THP-1-O-2-CYHX
+Cg311  CG301  Og301   CC3162   0.25  2  180.0 ! "  MCSA fit
+Cg311  CG301  Og301   CC3162   0.06  3  180.0 ! "  MP2/cc-pVTZ//MP2/6-31G*
+
+Cg301  Og301   CC3162  HCA1     0.284 3    0.0 ! par35 HCA2 CC32A OC30A CC32A
+CC3161  CC3161  CC3162  Og301    0.20  3    0.0 ! par27 X CTL1 CTL1 X
+CC3162  Og301   Cg301  HgA1     0.284 3    0.0 ! par35 HCA2 CC32A OC30A CC32A
+HgA1    Cg301  Cg311  Og3C61   0.20  3    0.0 ! par27 X CTL1 CTL1 X
+CG311  CG311  CG301  HGA1       0.1950  3     0.00 ! 
+
+
+!------------ DHA Link to arabinofuranose---------------
+Og301   CC3152  CC3151  OC311    2.87  1  180.0 ! erh aldopentose monosac
+Og301   CC3152  CC3151  OC311    0.03  2    0.0 ! " MCSA fit
+Og301   CC3152  CC3151  OC311    0.23  3    0.0 ! " MP2/cc-pVTZ//MP2/6-31G*
+
+!-- Cg2O2   Cg311  Cg301  Og301    0.20  3    0.0 ! par27 X CTL1 CTL1 X
+Cg2O3   Cg311  Cg301  Og301    0.20  3    0.0 ! par27 X CTL1 CTL1 X
+Og301   CC3152  CC3151  HCA1     0.20  3    0.0 ! par27 X CTL1 CTL1 X
+Cg301   Og301   CC3152  HCA1     0.284 3    0.0 ! OMe-THF  HCA1C2  CC312C  OC301
+HgA1    Cg301   Og301   CC3152   0.284 3    0.0 ! CC311D  OC301   CC311C  HCA1
+HgA1    Cg301  Cg311  Cg2O3    0.20  3    0.0 ! par27 X CTL1 CTL1 X
+Cg311   Cg301  Cg311   Cg2O3    0.20  3    0.0 ! par27 X CTL1 CTL1 X
+Cg301  Cg311  Cg2O3   Og2d2    0.05  6 180.00 ! par22 X CT1 CC X
+
+Og301   CC3152  OC3C51  CC3153   0.76  1  180.0 ! erh aldopentose monosac
+Og301   CC3152  OC3C51  CC3153   1.25  2    0.0 ! " MCSA fit
+Og301   CC3152  OC3C51  CC3153   0.48  3  180.0 ! " MP2/cc-pVTZ//MP2/6-31G*
+
+Cg301  Og301   CC3152  OC3C51   0.52  1  180.0 ! 
+Cg301  Og301   CC3152  OC3C51   1.50  2    0.0 !   " MCSA fit
+Cg301  Og301   CC3152  OC3C51   0.98  3    0.0 !   " MP2/cc-pVTZ//MP2/6-31G*
+
+Cg301  Og301   CC3152  CC3151   1.19  1  180.0 !  pram model compound 4 
+Cg301  Og301   CC3152  CC3151   0.16  2  180.0 !   " MCSA fit
+Cg301  Og301   CC3152  CC3151   0.49  3  180.0 !   " MP2/cc-pVTZ//MP2/6-31G*
+                        
+Cg311  Cg301  Og301   CC3152   0.41  1  180.0 ! og THP-1-O-2-CYHX
+Cg311  Cg301  Og301   CC3152   0.66  2  180.0 ! "  MCSA fit
+Cg311  Cg301  Og301   CC3152   1.60  3    0.0 ! "  MP2/cc-pVTZ//MP2/6-31G*
+
+CC3151  CC3151  CC3152  Og301    0.11  1  180.0 ! erh aldopentose monosac
+CC3151  CC3151  CC3152  Og301    0.66  2    0.0 ! " MCSA fitCC3151  CC3151  CC3152  Og301    0.02  3  180.0 ! " MP2/cc-pVTZ//MP2/6-31G*
+                        
+!-- After acetylation of aceric on C3
+CC2o5  OC301   Cg3c50  Cg3c51   0.07  1  180.0 !  pram model compound 3 (raman et al)
+CC2o5  OC301   Cg3c50  Cg3c51   0.04  2    0.0 !   " MCSA fit
+CC2o5  OC301   Cg3c50  Cg3c51   0.14  3    0.0 !   " MP2/cc-pVTZ//MP2/6-31G*
+OC301   CG3C50 CG3C51 CG3C51     2.0000  3   180.00 ! 
+OC301   CG3C50 CG3C51 CG3C51     0.4000  5     0.00 ! 
+OC301   CG3C50 CG3C51 CG3C51     0.8000  6     0.00 ! 
+
+Oc301   CG3C50  CG3C51  OG311      0.0000  3     0.00 ! /tmp/php , from OG311 CG3C51 CG3C51 OG311, penalty= 6
+Cg3c50  OC301   CC2O5   CC331    2.0500 2  180.0 ! CG311  CG2O2  OG302  CG331
+OG2D2  CG2O3  CG3C50 Oc301      0.1600  3     0.00 
+OG2D2  CG2O3  CG3C50 Og311      0.1600  3     0.00 
+
+OC301   CG3C50  CG3C51  cG331    2.87  1  180.0 ! erh aldopentose monosac
+OC301   CG3C50  CG3C51  cG331    0.03  2    0.0 ! " MCSA fit
+OC301   CG3C50  CG3C51  cG331    0.23  3    0.0 ! " MP2/cc-pVTZ//MP2/6-31G*
+!--- acer deacetylated c5 c4 c3 o3 ----
+Og311   CG3C50  CG3C51  cG331    2.87  1  180.0 ! erh aldopentose monosac
+Og311   CG3C50  CG3C51  cG331    0.03  2    0.0 ! " MCSA fit
+Og311   CG3C50  CG3C51  cG331    0.23  3    0.0 ! " MP2/cc-pVTZ//MP2/6-31G*
+
+OC301   Cg3c51  Cg3c50  Og311    2.87  1  180.0 ! erh aldopentose monosac
+OC301   Cg3c51  Cg3c50  Og311    0.03  2    0.0 ! " MCSA fit
+OC301   Cg3c51  Cg3c50  Og311    0.23  3    0.0 ! " MP2/cc-pVTZ//MP2/6-31G*
+
+!--- end acer deacetylated ----
+
+Cg3c50  OC301   CC2O5   OC2D1    0.9650 1  180.0 ! OG2D1  CG2O2  OG302  CG301
+CG2o3   CG3c50   OC301   CC2o5    0.64  1  180.0 ! 
+CG2o3   CG3c50   OC301   CC2o5    0.03  2  180.0 ! 
+CG2o3   CG3c50   OC301   CC2o5    0.61  3    0.0 ! 
+
+OC301   Cg3c51  Cg3c50  OC301    2.87  1  180.0 ! erh aldopentose monosac
+OC301   Cg3c51  Cg3c50  OC301    0.03  2    0.0 ! " MCSA fit
+OC301   Cg3c51  Cg3c50  OC301    0.23  3    0.0 ! " MP2/cc-pVTZ//MP2/6-31G*
+
+!------ Glucuronic protonated
+Cc3163  Cc2O2  Oc311  HCP1       2.0500  2   180.00 ! ***** , from CG311 CG2O2 OG311 HGP1, penalty= 1.2
+HCA1    CC3163  CC2O2   OC311    0.05  6  180.0 ! par22 X CT1  CC   X
+OC3C61  CC3163  CC2O2   OC311    0.64  2  180.0 ! og amop mp2/ccpvtz
+CC3161  CC3163  CC2O2   OC311    0.05  6 180.00 ! par22 X CT1 CC X
+Oc2d2  Cc2O2  Oc311  HcP1       2.0500  2   180.00 ! PROT adm jr, 10/17/90, acet
+
+
+!---- DHA unprotonated from CGenFF
+OG2D2  CG2O3  CG301  CG321      0.0500  6   180.00 ! /tmp/php , from OG2D2 CG2O3 CG301 CG331, penalty= 0.9
+OG2D2  CG2O3  CG301  OG3C61     0.5500  2   180.00 ! /tmp/php , from OG2D2 CG2O3 CG301 OG301, penalty= 6.5
+OG2D2  CG2O3  CG311  OG3C61     0.5500  2   180.00 ! /tmp/php , from OG2D2 CG2O3 CG311 OG301, penalty= 6.5
+CG2O3  CG301  CG321  CG311      0.2000  3     0.00 ! /tmp/php , from CG2O3 CG311 CG321 CG311, penalty= 8
+CG2O3  CG301  CG321  HGA2       0.2000  3     0.00 ! /tmp/php , from CG2O3 CG301 CG331 HGA3, penalty= 6
+CG2O3  CG301  OG3C61 CG311      0.2000  3     0.00 ! /tmp/php , from CG2O3 CG301 OG301 CG331, penalty= 21.5
+CG2O3  CG311  CG311  CG311      0.2000  3     0.00 ! /tmp/php , from CG2O3 CG311 CG311 CG321, penalty= 0.6
+CG2O3  CG311  OG3C61 CG301      0.2000  3     0.00 ! /tmp/php , from CG2O3 CG311 OG301 CG331, penalty= 22.7
+
+!--- KDOup patch
+CG311  CG321  CG301  CC2o2    0.20  3    0.0 ! par27 X CTL1 CTL1 X
+CC2O2   CG301   OC301   CC3161    0.20  3    0.0 ! og/sng thp CC321C CC321C OC3C61 CC321C
+OC301   CG301   CC2O2   OC2D2    0.64  2  180.0 ! og amop mp2/ccpvtz
+HGA2    CG321   CG301   CC2O2    0.20  3    0.0 ! par27 X CTL1 CTL2 X
+CC2O2   CG301   OG3C61  CG311    0.20  3    0.0 ! og/sng thp
+OC2D2   CC2O2   CG301   OG3c61    0.64  2  180.0 ! og amop mp2/ccpvtz
+OC2D2   CC2O2   CG301   CG321    0.05  6 180.00 ! par22 X CT1 CC X
+
+!----- Copied from older par_all36_cgenff.prm, missing in newer version
+CG321  CG311  CG311  OG311      0.14    3       0.0 ! flavin
+OG311  CG311  CG311  OG311      0.20    3     0.0 ! flavin
+CG311  CG311  CG321  OG311      0.20    3   180.0 ! flavin
+
+
+
+
+IMPROPERS
+CG2O3  OG2D2  OG2D2  CG3C50    96.0000  0     0.00 ! /tmp/php , from CG2O3 OG2D2 OG2D2 CG321, penalty= 6.5
+
+!--- KDO from CGENFF
+CG2O2  CG301  OG2D1  OG311     65.0000  0     0.00 ! ***** , from CG2O2 CG311 OG2D1 OG311, penalty= 0.8
+Cc2O2  Cc3163  Oc311  Oc2d2     65.0000  0     0.00 ! ***** , from CG2O2 CG311 OG2D1 OG311, penalty= 0.8
+CC2O2   CG301   OC2D2   OC2D2    96.00   0   0.00  ! par22 OC   X    X    CC
+
+
+
+END
+

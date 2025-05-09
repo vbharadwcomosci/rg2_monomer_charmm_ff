@@ -1,0 +1,25 @@
+* RGII Monomer Build
+*
+
+!-- where are the extra parameters from cgenff and determined by analogy for RG-II
+set toppar_rg2 ./rg2_toppar
+
+!-- where are the standard distribution charmm topology and parameter files
+!-- can be obtained from https://www.charmm.org/archive/charmm/resources/charmm-force-fields/
+set toppar_chm ./toppar
+
+read rtf   card name @{toppar_chm}/top_all36_carb.rtf
+read rtf   card name @{toppar_chm}/top_all36_cgenff.rtf append
+read rtf   card name @{toppar_rg2}/rg2_cgenff_monomer.rtf append
+
+read param card name @{toppar_chm}/par_all36_carb.prm flex
+
+boml -2
+read param card name @{toppar_chm}/par_all36_cgenff.prm flex append  
+boml 0
+
+read param card name @{toppar_rg2}/rg2_cgenff_monomer.prm flex append
+
+stream @{toppar_chm}/toppar_water_ions.str
+
+return

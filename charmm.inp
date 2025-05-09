@@ -1,0 +1,26 @@
+**
+*
+dimens    chsize 1000000
+stream input/setup_rg2_monomer.str
+
+read psf card name rg2_monomer_m4.psf
+read coor pdb name rg2_monomer_m4.pdb
+
+ener
+
+stop
+
+!=============USAGE=============================
+label usage
+prnl 2 node 0
+echo
+echo
+echo
+echo "****************************************************"
+echo "       Usage: charmm -i input/charmm.inp
+echo "****************************************************"
+echo
+echo
+echo
+prnl 5 node 0
+stop
